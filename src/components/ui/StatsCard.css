@@ -1,0 +1,80 @@
+.stats-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.stats-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.stats-card-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius-md);
+    background: var(--bg-primary);
+}
+
+.stats-card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.stats-card-title {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stats-card-sparkline {
+    margin-top: 0.75rem;
+    height: 40px;
+}
+
+.trend-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+
+.trend-up {
+    color: var(--success);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.trend-down {
+    color: var(--danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 480px) {
+    .stats-card {
+    padding: 1rem;
+    }
+    .stats-card-value {
+    font-size: 1.4rem;
+    }
+    .stats-card-icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    }
+}

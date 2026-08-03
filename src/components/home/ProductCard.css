@@ -1,0 +1,210 @@
+.product-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.4s ease;
+  border: 1px solid var(--border);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.card-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #242424;
+  font-size: 60px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:focus-within .card-overlay,
+.product-card:active .card-overlay,
+.product-card.show-actions .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  color: white;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.overlay-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.overlay-btn.primary {
+  background: #E50914;
+  border-color: #E50914;
+}
+
+.overlay-btn.primary:hover {
+  background: #B20710;
+}
+
+.country-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 14px;
+  background: rgba(124, 58, 237, 0.9);
+  backdrop-filter: blur(4px);
+  color: white;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.rating-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: rgba(245, 158, 11, 0.95);
+  backdrop-filter: blur(4px);
+  color: #000;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-cat {
+  font-size: 11px;
+  color: #E50914;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #F59E0B;
+}
+
+.card-year {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+
+@media (max-width: 1024px) {
+  .card-image { height: 220px; }
+  .card-info { padding: 14px; }
+  .card-title { font-size: 14px; }
+  .card-price { font-size: 18px; }
+}
+
+@media (max-width: 768px) {
+  .card-image { height: 180px; }
+  .card-info { padding: 10px; }
+  .card-title { font-size: 13px; margin-bottom: 6px; }
+  .card-price { font-size: 16px; }
+  .card-cat { font-size: 9px; letter-spacing: 1px; }
+  .card-year { font-size: 10px; }
+  .card-overlay { padding: 8px; gap: 4px; }
+  .overlay-btn { padding: 8px 6px; font-size: 10px; border-radius: 6px; }
+}
+
+@media (hover: none) {
+  .product-card:active {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 32px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image { height: 150px; }
+  .card-info { padding: 8px; }
+  .card-title { font-size: 12px; }
+  .card-price { font-size: 14px; }
+  .card-cat { font-size: 8px; }
+  .overlay-btn { padding: 6px 4px; font-size: 9px; }
+  .country-tag { top: 5px; left: 5px; padding: 2px 6px; font-size: 8px; }
+  .rating-badge { top: 5px; right: 5px; padding: 2px 6px; font-size: 9px; }
+}
+
+@media (max-width: 320px) {
+  .card-image { height: 120px; }
+  .card-info { padding: 6px; }
+  .card-title { font-size: 11px; }
+  .card-price { font-size: 13px; }
+  .overlay-btn { padding: 5px 3px; font-size: 8px; }
+}
